@@ -25,9 +25,9 @@ if i == 1:
         modify(json.dumps(data))    
         print("Information added successfully!!")
 
-# elif i == 2:
-#     name = input("Enter contact name : ")
-#     for x in data:
-#         if name.lower() in x["name"].lower():
-#             print("Name: "+x["name"]+"\nTelephone: "+x["number"]+"\nEmail: "+x["email"])
+elif i == 2:
+    name = input("Enter contact name : ")
+    for x in data:
+        if name.lower() in x["name"].lower():
+            print("Name: "+x["name"]+"\nTelephone: "+x["number"]+"\nEmail: "+x["email"])
 
