@@ -9,21 +9,21 @@ def modify(data):
         file.write(data)
         file.close()    
 
-# print("----------Welcome to CLI Tool for managing contacts-----------")        
-# print("Choose any one of the options \n 1. Create contacts\n 2. Search a contact\n 3. View all")
+print("----------Welcome to CLI Tool for managing contacts-----------")        
+print("Choose any one of the options \n 1. Create contacts\n 2. Search a contact\n 3. View all")
 
-# i = int(input())
-# if i == 1:
-#     name = input("Enter contact name : ")
-#     number = input("Enter contact number : ")
-#     email = input("Enter email : ")
-#     obj = {'name': name,'number': number,'email': email}
-#     if name == "":
-#         print("Error: name field can't be empty")
-#     else:
-#         data += [obj]
-#         modify(json.dumps(data))    
-#         print("Information added successfully!!")
+i = int(input())
+if i == 1:
+    name = input("Enter contact name : ")
+    number = input("Enter contact number : ")
+    email = input("Enter email : ")
+    obj = {'name': name,'number': number,'email': email}
+    if name == "":
+        print("Error: name field can't be empty")
+    else:
+        data += [obj]
+        modify(json.dumps(data))    
+        print("Information added successfully!!")
 
 # elif i == 2:
 #     name = input("Enter contact name : ")
