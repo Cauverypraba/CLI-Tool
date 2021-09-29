@@ -30,4 +30,19 @@ elif i == 2:
     for x in data:
         if name.lower() in x["name"].lower():
             print("Name: "+x["name"]+"\nTelephone: "+x["number"]+"\nEmail: "+x["email"])
+            print("Do you want to update or delete this contact? y/n")
+            ch = input()
+            if ch == 'y':
+                print("Choose any one 1. Update the contact or 2. Delete the contact")
+                input1 = int(input())
+                if input1 == 1:
+                    print("Leave empty to be unchange")
+                    number = input("Enter mobile number: ")
+                    email = input("Enter Email address: ")
+                    obj = {"name":x["name"],"number":number,"email":email}
+                    for j in obj.keys():
+                        if obj[j]!="":
+                            x[j]=obj[j]
+                    modify(json.dumps(store))
+
 
