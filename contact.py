@@ -43,6 +43,14 @@ elif i == 2:
                     for j in obj.keys():
                         if obj[j]!="":
                             x[j]=obj[j]
-                    modify(json.dumps(store))
+                    modify(json.dumps(data))
+                    print("Contact modified successfully!!")    
+                elif input1 == 2:
+                    print("Are you sure to delete the contact? y/n")
+                    a1 = input()
+                    if a1 == 'y':
+                        store.remove(x)
+                        modify(json.dumps(data))    
+                        print("Contact deleted successfully!!")
 
 
