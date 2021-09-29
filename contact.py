@@ -49,8 +49,11 @@ elif i == 2:
                     print("Are you sure to delete the contact? y/n")
                     a1 = input()
                     if a1 == 'y':
-                        store.remove(x)
+                        data.remove(x)
                         modify(json.dumps(data))    
                         print("Contact deleted successfully!!")
+elif i == 3:
+    for x in data:
+        print("Name: "+x["name"]+"  Telephone: "+x["number"]+"  Email: "+x["email"])
 
 
