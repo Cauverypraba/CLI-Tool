@@ -1,10 +1,14 @@
 import json
 
+# Read data from JSON file
 with open('data.json', 'r') as store:
     data = json.loads(store.read())
 store.close()
 
 def modify(data):
+    """
+    Method to modify information in JSON file 
+    """
     with open('data.json', 'w') as file:
         file.write(data)
         file.close()    
@@ -12,48 +16,55 @@ def modify(data):
 print("----------Welcome to CLI Tool for managing contacts-----------")        
 print("Choose any one of the options \n 1. Create contacts\n 2. Search a contact\n 3. View all")
 
-i = int(input())
-if i == 1:
+input_option = int(input())
+
+# Create contact when user selects option: 1
+if input_option == 1:
     name = input("Enter contact name : ")
     number = input("Enter contact number : ")
     email = input("Enter email : ")
-    obj = {'name': name,'number': number,'email': email}
+    insert_data = {'name': name,'number': number,'email': email}
     if name == "":
         print("Error: name field can't be empty")
     else:
-        data += [obj]
-        modify(json.dumps(data))    
+        data += [insert_data]
+        modify(json.dumps(data))   
         print("Information added successfully!!")
-
-elif i == 2:
+# Search for a contact if user selects option: 2
+elif input_option == 2:
     name = input("Enter contact name : ")
-    for x in data:
-        if name.lower() in x["name"].lower():
-            print("Name: "+x["name"]+"\nTelephone: "+x["number"]+"\nEmail: "+x["email"])
+    for info in data:
+        if name.lower() in info["name"].lower():
+            print("Name: "+info["name"]+"\nTelephone: "+info["number"]+"\nEmail: "+info["email"])
             print("Do you want to update or delete this contact? y/n")
             ch = input()
             if ch == 'y':
-                print("Choose any one 1. Update the contact or 2. Delete the contact")
-                input1 = int(input())
-                if input1 == 1:
+                print("Choose any one 1. Update the contact 2. Delete the contact")
+                input_modify_option = int(input())
+                # Update the contact with data provided by user
+                if input_modify_option == 1:
                     print("Leave empty to be unchange")
                     number = input("Enter mobile number: ")
                     email = input("Enter Email address: ")
-                    obj = {"name":x["name"],"number":number,"email":email}
-                    for j in obj.keys():
-                        if obj[j]!="":
-                            x[j]=obj[j]
+
+                    # Form a dict to be modified
+                    insert_data = {"name":info["name"], "number":number, "email":email}
+
+                    # Iterate through each keys and change values of contact provided by user
+                    for key in insert_data.keys():
+                        if insert_data[key] != "":
+                            info[key] = insert_data[key]
                     modify(json.dumps(data))
-                    print("Contact modified successfully!!")    
-                elif input1 == 2:
+                    print("Contact modified successfully!!")
+                # Delete the contact with user confirmation
+                elif input_modify_option == 2:
                     print("Are you sure to delete the contact? y/n")
-                    a1 = input()
-                    if a1 == 'y':
-                        data.remove(x)
+                    confirm_delete = input()
+                    if confirm_delete == 'y':
+                        data.remove(info)
                         modify(json.dumps(data))    
                         print("Contact deleted successfully!!")
-elif i == 3:
-    for x in data:
-        print("Name: "+x["name"]+"  Telephone: "+x["number"]+"  Email: "+x["email"])
-
-
+# Display all the contacts if user selects option: 3
+elif input_option == 3:
+    for info in data:
+        print("Name: "+info["name"]+"  Telephone: "+info["number"]+"  Email: "+info["email"])
