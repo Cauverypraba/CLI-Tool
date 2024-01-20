@@ -1,1 +1,42 @@
-[{"name": "Cauvery", "number": "7809354612", "email": "xxx@gmail.com"}, {"name": "Praba", "number": "9845123097", "email": "xxx@gmail.com"}, {"name": "Anushka", "number": "9237017845", "email": "anuksha7819@gmail.com"}]
+[
+    {
+        "name": "Anushka", 
+        "number": "9237017845", 
+        "email": "anuksha7819@gmail.com"
+    },
+    {
+        "name": "Bharathi", 
+        "number": "8512560264", 
+        "email": "bharathi0021@gmail.com"
+    },
+    {
+        "name": "Cauvery", 
+        "number": "7809354612", 
+        "email": "cauvery891@gmail.com"
+    },
+    {
+        "name": "Dharani", 
+        "number": "7190263510", 
+        "email": "dharani992@gmail.com"
+    },
+    {
+        "name": "Ezhakiya", 
+        "number": "8160542874", 
+        "email": "ezhakiya@gmail.com"
+    },
+    {
+        "name": "Gomathi", 
+        "number": "9715243095", 
+        "email": "gomathi98@gmail.com"
+    },
+    {
+        "name": "Praba", 
+        "number": "9845123097", 
+        "email": "praba007@gmail.com"
+    }, 
+    {
+        "name": "Viruksha", 
+        "number": "7812654392", 
+        "email": "viruksha114@gmail.com"
+    }
+]
